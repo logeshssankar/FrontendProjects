@@ -1,0 +1,135 @@
+*{
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #f4f4f4;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #e91e63, #9c27b0);
+    padding: 0px 20px;
+    color: white;
+    border-radius: 6px;
+    margin: 20px;
+}
+
+.title.name{
+    font-weight:600;
+    color: #ffffff;
+}
+
+.items ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: 550px;
+    gap: 20px;
+}
+
+.items ul li a,
+.items label {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.items ul li a:hover{
+    color:white;
+}
+
+.items ul li:nth-child(3) a{
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+#dropdown{
+    background: transparent;
+    border: none;
+    color: #ddd;
+}
+
+.right-items{
+    display:flex;
+    align-items: center;
+    gap:20px;
+}
+
+.right-items ul{
+    display: flex;
+    list-style: none;
+    gap:20px;
+}
+
+.right-items ul li a{
+    text-decoration: none;
+    color:#ddd;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap:6px;
+}
+
+.right-items ul li a:hover{
+    color:white;
+}
+
+.search-container{
+   display: flex;
+   align-items: center;
+}
+
+.search-container input{
+    padding: 8px 10px;
+    border-radius: 4px 0 0 4px;
+    border:2px solid white;
+    outline: none;
+    background-color: #fff;
+    font-size: 0.85rem;
+}
+
+.search-container button {
+    padding: 8px 14px;
+    border-radius: 0 4px 0 4px;
+    border:2px solid white;
+    background-color: #9c27b0;
+    color: white;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.search-container button:hover{
+    background-color: #86129b;
+}
+
+i {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .items ul {
+        margin-right: 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .right-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}
