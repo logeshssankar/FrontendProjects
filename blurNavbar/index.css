@@ -7,7 +7,6 @@ body {
     background-position: center;
 }
 
-
 .conatiner {
     display: flex;
     align-items: center;
@@ -30,7 +29,6 @@ body {
 .lastname {
     color: #ffffff;
 }
-
 
 .nav-links {
     margin-right: auto;
@@ -61,7 +59,6 @@ body {
     color: #5e9693;
     border-bottom: 2px solid #5e9693;
 }
-
 
 .nav-social-links {
     display: flex;
@@ -148,6 +145,5 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    }
-    
+    }  
 }
