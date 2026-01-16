@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-image:url(pexels-cottonbro-7579831.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+.conatiner {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, .15);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.brand-name {
+    margin-right: 40px;
+    letter-spacing: .25rem;
+}
+
+.firstname {
+    color: #5e9693;
+}
+
+.lastname {
+    color: #ffffff;
+}
+
+
+.nav-links {
+    margin-right: auto;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #5e9693;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 0;
+    display: inline-block;
+    transition: transform 0.25s ease, border-bottom 0.25s ease;
+}
+
+.nav-links li a:hover {
+    transform: translateY(-3px);
+    color: #5e9693;
+    border-bottom: 2px solid #5e9693;
+}
+
+
+.nav-social-links {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-social-links a {
+    color: white;
+    font-size: 20px;
+}
+
+.nav-social-links a:hover {
+
+    color: #5e9693;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    border: 2px solid #5e9693;
+    border-radius: 10px;
+    margin: 150px auto;
+    background-color: rgba(255, 255, 255, .15);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+}
+
+.form h2{
+    color: #5e9693;
+    text-align: center;
+}
+
+.form input[type="text"],[type="email"]{
+    border:3px solid #5e9693;
+    box-sizing: border-box;
+    width: 400px;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form textarea{
+    display: flex;
+    border:3px solid #5e9693;
+    width: 400px;
+    height: 150px;
+    resize: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    outline: none;
+}
+.form button{
+    background-color: #5e9693;
+    color: white;
+    border:none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media (max-width:960px) {
+
+    .form{
+        width: 75%;
+    }
+
+    .form input[type="text"],[type="email"]{
+        width: 90%;
+    }
+
+    .conatiner{
+        width: 90%;
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+}
