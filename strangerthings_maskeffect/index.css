@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-image: url(assets/Will\ Byers.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: black;
+  text-shadow:
+    -1px -1px 0 rgb(172, 0, 0),
+    1px -1px 0 rgb(172, 0, 0),
+    -1px 1px 0 rgb(172, 0, 0),
+    1px 1px 0 rgb(172, 0, 0);
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  transform: translateY(-3px);
+  font-weight: bold;
+  color: rgb(172, 0, 0);
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 60px;
+  min-height: calc(100vh - 60px);
+  margin-top: 90px;
+}
+
+.st {
+  max-width: 500px;
+}
+
+.stranger-things {
+  margin-bottom: 0px;
+}
+
+.st-title {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(255, 123, 0);
+  font-size: 2.8rem;
+  line-height: 1.1;
+  text-decoration: underline;
+  text-shadow:
+    -1px -1px 0 rgb(172, 0, 0),
+    1px -1px 0 rgb(172, 0, 0),
+    -1px 1px 0 rgb(172, 0, 0),
+    1px 1px 0 rgb(172, 0, 0);
+}
+
+.content1 {
+  margin-top: 20px;
+  color: black;
+}
+
+.upside-down-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid gray;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upside-down-btn:hover {
+  background-color: rgb(172, 0, 0);
+  border-color: rgb(172, 0, 0);
+}
+
+.mindflayer {
+  max-width: 400px;
+  text-align: left;
+  color: black;
+}
+
+.mindflayer h2 {
+  font-weight: 500;
+  font-size: 2rem;
+  color: black;
+  text-shadow:
+    -1px -1px 0 rgb(172, 0, 0),
+    1px -1px 0 rgb(172, 0, 0),
+    -1px 1px 0 rgb(172, 0, 0),
+    1px 1px 0 rgb(172, 0, 0);
+}
+
+.content2 {
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .main-wrapper {
+    flex-direction: column;
+    padding: 100px 30px;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .mindflayer {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 0 20px;
+  }
+
+  .nav-links ul {
+    gap: 15px;
+  }
+
+  .st-title {
+    font-size: 2.1rem;
+  }
+
+  .bar {
+    width: 200px;
+    margin: 15px auto;
+  }
+
+  .upside-down-btn {
+    width: 100%;
+  }
+}
+
+.cursor-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background-image: url("assets/1405474.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* initially OFF */
+  opacity: 0;
+
+  /* mask setup */
+  --x: 50%;
+  --y: 50%;
+
+  mask-image: radial-gradient(
+    circle 120px at var(--x) var(--y),
+    black 0%,
+    black 35%,
+    transparent 60%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    circle 120px at var(--x) var(--y),
+    black 0%,
+    black 35%,
+    transparent 60%
+  );
+
+  transition: opacity 0.6s ease;
+}
+.cursor-reveal.active {
+  opacity: 1;
+}
+
+.exit-upside-btn {
+  background: transparent;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid gray;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exit-upside-btn:hover {
+  background: rgb(172, 0, 0);
+  border-color: rgb(172, 0, 0);
+  color: white;
+}
+
+.exit-upside-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.9) 0%,
+    rgba(255, 0, 0, 0.6) 30%,
+    rgba(255, 0, 0, 0.15) 60%,
+    transparent 70%
+  );
+
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.8),
+    0 0 30px rgba(255, 0, 0, 0.6),
+    0 0 50px rgba(255, 0, 0, 0.4);
+
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.cursor-glow.active {
+  transform: translate(-50%, -50%) scale(1);
+}

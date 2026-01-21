@@ -1,0 +1,120 @@
+<div class="header">
+  <head>
+    <title>Logesh Sankar | Java Developer</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="nav">
+      <section class="nav-container">
+        <h2 class="title">STRANGER THINGS</h2>
+      </section>
+
+      <section class="nav-links">
+        <ul>
+          <li class="home"><a href="#">Home</a></li>
+          <li class="character"><a href="#">Character</a></li>
+          <li class="episodes"><a href="#">Episodes</a></li>
+          <li class="upside-down"><a href="#">Upside Down</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="main-wrapper">
+      <div class="st">
+        <section class="stranger-things">
+          <h2 class="st-title">STRANGER <span>THINGS</span></h2>
+        </section>
+
+        <div class="bar"></div>
+
+        <section class="content1">
+          <p>
+            The Upside Down is an alternate dimension that mirrors the town of
+            Hawkins, Indiana, but is filled with darkness, monstrous creatures,
+            and a haunting atmosphere.
+          </p>
+        </section>
+
+        <button class="upside-down-btn" type="button">
+          Enter the Upside Down
+        </button>
+
+        <button class="exit-upside-btn" type="button">
+          Exit the Upside Down
+        </button>
+      </div>
+
+      <div class="mindflayer">
+        <section class="mindflayer-title">
+          <h2>The Mind Flayer</h2>
+        </section>
+
+        <section class="content2">
+          <p>
+            The Mind Flayer, also known as the hive mind, is a central element
+            of the storyline. It is depicted as a massive, spider-like entity
+            with telepathic abilities, capable of influencing and controlling
+            others across dimensions.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div class="cursor-reveal"></div>
+    <div class="cursor-glow"></div>
+
+    <script>
+      const reveal = document.querySelector(".cursor-reveal");
+      const glow = document.querySelector(".cursor-glow");
+      const enterBtn = document.querySelector(".upside-down-btn");
+      const exitBtn = document.querySelector(".exit-upside-btn");
+
+      let upsideDownActive = false;
+
+      enterBtn.addEventListener("click", () => {
+        upsideDownActive = true;
+        reveal.classList.add("active");
+        glow.classList.add("active");
+
+        exitBtn.classList.add("show");
+        enterBtn.style.display = "none";
+      });
+
+      exitBtn.addEventListener("click", () => {
+        upsideDownActive = false;
+        reveal.classList.remove("active");
+        glow.classList.remove("active");
+
+        exitBtn.classList.remove("show");
+        enterBtn.style.display = "block";
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!upsideDownActive) return;
+
+        const x = e.clientX;
+        const y = e.clientY;
+
+        glow.style.left = `${x}px`;
+        glow.style.top = `${y}px`;
+
+        reveal.style.setProperty("--x", `${(x / window.innerWidth) * 100}%`);
+        reveal.style.setProperty("--y", `${(y / window.innerHeight) * 100}%`);
+      });
+    </script>
+  </body>
+</div>
